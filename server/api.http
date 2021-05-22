@@ -1,0 +1,91 @@
+POST http://192.168.0.105:4000/doctor HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"",
+    "specialization":"",
+    "regno":"",
+    "degree":"",
+    "mob":"",
+}
+
+POST http://192.168.0.105:4000/patient HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"",
+    "dob":"",
+    "patientno":"",
+    "disease":"",
+    "detail":[],
+    "email":"",
+    "passcode":"",
+    "regno":"",
+    "gender":"",
+    "age":""
+}
+
+POST http://192.168.0.105:4000/patient/:12 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"",
+    "dob":"",
+    "email":"",
+    "passcode":"",
+    "patientno":"",
+    "disease":"",
+    "detail":[],
+    "regno":"",
+    "gender":"",
+    "age":""
+}
+
+GET http://192.168.0.105:4000/patient HTTP/1.1
+
+GET http://192.168.0.105:4000/patient/12 HTTP/1.1
+
+GET http://192.168.0.105:4000/doctor HTTP/1.1
+
+GET http://192.168.0.105:4000/doctor/12 HTTP/1.1
+
+
+GET http://192.168.0.105:4000/user HTTP/1.1
+
+GET http://192.168.0.105:4000/user/1 HTTP/1.1
+
+POST http://192.168.0.105:4000/user/1 HTTP/1.1
+
+POST http://192.168.0.105:4000/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "regno":"",
+    "email":"",
+    "password":"",
+    "location":""
+}
+
+POST http://192.168.0.105:4000/admin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"rajiv@gmail.com",
+    "password":"1234"
+}
+
+POST http://192.168.0.105:4000/admin/12 HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"",
+    "password":""
+}
+
+GET http://192.168.0.105:4000/admin HTTP/1.1
+
+DELETE http://192.168.0.105:4000/patient/123 HTTP/1.1
+
+
+
+

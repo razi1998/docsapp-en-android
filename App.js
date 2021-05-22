@@ -1,21 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+// import { createStackNavigator } from '@react-navigation/stack'
+// add this after other import statements
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import { FontAwesome5 } from '@expo/vector-icons';
+import DoctorPortal from './DoctorPortal'
+import PatientPortal from './PatientPortal'
 
-export default function App() {
+const Tab = createMaterialBottomTabNavigator()
+
+function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="DoctorPortal"
+        activeColor="white"
+        inactiveColor="#203864"
+        labelStyle={{ fontSize: 15,fontWeight: "bold" }}
+      >
+        <Tab.Screen
+          name="DoctorPortal"
+          component={DoctorPortal}
+          options={{
+            tabBarLabel: 'Doctors',
+            tabBarIcon: () => (
+              <FontAwesome5 name="user-md" size={25} color="#203864" />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name='PatientPortal'
+          component={PatientPortal}
+          options={{
+            tabBarLabel: 'Patients',
+            tabBarIcon: () => (
+              <FontAwesome5 name="user-injured" size={25} color="#203864" />
+            ),
+          }} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
